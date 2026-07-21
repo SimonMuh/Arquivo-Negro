@@ -1,0 +1,34 @@
+Fase 1 - A Cena (onde estamos)
+✅ Estrutura do projeto
+✅ Mesa
+✅ Livro
+🔄 Sistema de iluminação
+⏳ Vela
+⏳ Sons
+Fase 2 - O Livro
+Abrir a capa
+Mostrar as páginas
+Virar páginas
+Índice
+Navegação
+Fase 3 - As Páginas
+Papel envelhecido
+Fotos
+Cartas
+Recortes
+Desenhos
+Anotações
+Fase 4 - Interatividade
+Favoritos (marca-página)
+Notas pessoais
+Objetos levantando com o mouse
+Envelope abrindo
+Fotos virando
+Mapas desdobrando
+Fase 5 - Imersão
+Sons
+Poeira
+Tremor da chama
+Luz dinâmica
+Objetos aleatórios na mesa
+

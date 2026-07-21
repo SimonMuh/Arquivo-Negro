@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Bestiário</title>
+
+    <link rel="stylesheet" href="css/estilo.css">
+
+</head>
+
+<body>
+
+    <!-- Mesa -->
+    <div class="mesa">
+
+        <!-- Livro -->
+        <div class="livro">
+
+            <div class="lombada"></div>
+
+            <div class="capa-traseira">
+
+                <div class="paginas"></div>
+                
+            </div>
+
+                <div class="bloco-paginas"></div> 
+            
+            <div class="capa-frontal">
+
+                <div class="placa">
+
+                    <div class="moldura-interna"></div>
+
+                    <h1>ANOMALIAS</h1>
+
+                    <div class="simbolo">۝ </div>
+
+                    <p>Arquivo Negro</p>
+                
+                </div>
+
+                <div class="interior-capa"></div>
+
+            </div>
+
+        </div>
+
+        <!-- Envelope imersivo sobre a mesa -->
+        <div class="envelope-container" id="envelopeMesa">
+            <div class="envelope">
+                <!-- Detalhe 1: Mancha de Sangue no fundo do envelope -->
+                <div class="sangue-decorativo"></div>
+
+                <!-- Aba Superior -->
+                <div class="aba-envelope"></div>
+                
+                <!-- O papel interno -->
+                <div class="conteudo-interno" id="conteudoInternoBtn">
+                    <span class="icone-foto">📷</span>
+                    <span class="texto-foto">Inserir Registro</span>
+                </div>
+
+                <!-- Corpo do envelope -->
+                <div class="corpo-envelope">
+                    <input type="file" accept="image/*" id="uploadFotoEnvelope" style="display: none;">
+                </div>
+
+            </div>
+        </div>
+
+        <!-- BLOCO DE NOTAS SOBRE A MESA -->
+        <div id="blocoNotasMesa" class="bloco-fechado">
+
+                    <!-- FERRAMENTAS DE EDIÇÃO DA PÁGINA (Lápis e Borracha) -->
+                    <div class="ferramentas-pagina">
+                        <button id="btn-lapis" class="btn-ferramenta" title="Editar página atual">
+                            <div class="objeto-lapis">
+                                <div class="lapis-corpo"></div>
+                                <div class="lapis-ponta"></div>
+                                <div class="lapis-grafite"></div>
+                            </div>
+                        </button>
+                        
+                        <button id="btn-borracha" class="btn-ferramenta" title="Apagar página atual">
+                            <div class="objeto-borracha">
+                                <div class="borracha-capa"></div>
+                            </div>
+                        </button>
+                    </div>
+            
+            <!-- Anéis da Espiral (Ficam sempre visíveis no topo) -->
+            <div class="espiral-bloco">
+                <div class="anel"></div>
+                <div class="anel"></div>
+                <div class="anel"></div>
+                <div class="anel"></div>
+                <div class="anel"></div>
+                <div class="anel"></div>
+                <div class="anel"></div>
+            </div>
+
+            <!-- Capa Azul que levanta -->
+            <div class="capa-bloco-azul">
+                <span class="titulo-capa">NOTE</span>
+            </div>
+
+            <!-- Conteúdo interno (Folhas com o formulário) -->
+            <div class="conteudo-bloco">
+                <div class="topo-bloco">
+                    <h3>Nova Ficha</h3>
+                    <button id="btnFecharBloco">✕ Fechar</button>
+                </div>
+                
+                <div class="corpo-formulario">
+                    <div class="campo-bloco">
+                        <label>Nome da Anomalia:</label>
+                        <input type="text" id="notaNome" placeholder="Ex: O Observador das Sombras...">
+                    </div>
+
+                    <div class="campo-bloco">
+                        <label>Descrição da Anomalia:</label>
+                        <textarea id="notaDescricao" placeholder="Como ela se parece?..."></textarea>
+                    </div>
+
+                    <div class="campo-bloco">
+                        <label>Comportamentos:</label>
+                        <textarea id="notaMeios" placeholder="Como se comporta?..."></textarea>
+                    </div>
+
+                    <div class="campo-bloco textareas-curtos">
+                        <div class="campo-bloco">
+                            <label>Casos:</label>
+                            <textarea id="notaCasos" placeholder="Relatos..."></textarea>
+                        </div>
+                        <div class="campo-bloco">
+                            <label>Fraquezas:</label>
+                            <input type="text" id="notaFraquezas" placeholder="O que a afasta?...">
+                        </div>
+                    </div>
+                    
+                    <button id="btnRegistrarNoLivro">✍️ Registrar no Livro</button>
+                </div>
+            </div>
+        </div>
+                    
+    </div>
+
+<div id="escuridao"></div>
+<div id="brilho"></div>
+<div id="vela"></div>
+
+<!-- SDKs do Firebase (Versão de Compatibilidade para scripts tradicionais) -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-storage-compat.js"></script>
+
+    <script src="js/cena.js"></script>
+    <script src="js/vela.js"></script>
+    <script src="js/iluminacao.js"></script>
+    <script src="js/livro.js"></script>
+    <script src="js/bloco-paginas.js"></script>
+    <script src="js/folha-rosto.js"></script>
+    <script src="js/envelope.js" defer></script>
+    <script src="js/blocoNotas.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>
