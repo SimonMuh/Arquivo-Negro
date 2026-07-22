@@ -1530,5 +1530,5 @@ label {
 html:active,
 body:active,
 *:active {
-    cursor: url('../imagens/cursores/mao-fechada.png') 10 -50, grabbing !important;
+    cursor: url('../imagens/cursores/mao-fechada.png') 10 2, grabbing !important;
 }
