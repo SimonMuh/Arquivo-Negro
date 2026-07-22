@@ -1421,65 +1421,94 @@ transparent 14%
     transform: scale(1.5) rotate(25deg) translateY(-4px);
 }
 
-/* --- CONSTRUÇÃO DO LÁPIS ANTERIOR (Madeira e Grafite) --- */
+/* =========================================================
+   1. LÁPIS REALISTA (Amarelo, Virola Prateada e Borracha)
+   ========================================================= */
 .objeto-lapis {
     display: flex;
     align-items: center;
-    width: 140px;
+    width: 160px; /* Aumentado levemente para caber a virola metálica */
     height: 12px;
+    position: relative;
+    filter: drop-shadow(2px 3px 2px rgba(0,0,0,0.3)); /* Sombra realista de mesa */
 }
 
-/* Corpo sextavado clássico verde escuro/grafite ou amarelo envelhecido */
+/* Borrachinha branca + Virola metálica prateada no topo do lápis */
+.objeto-lapis::before {
+    content: "";
+    width: 18px;
+    height: 100%;
+    /* Dividido entre Borracha Branca e Metal Prateado com ranhuras */
+    background: 
+        linear-gradient(to right, #c5c3bd 0 7px, transparent 7px),
+        repeating-linear-gradient(to right, #aaaaaa 0 1px, #696969 1px 3px, #969696 3px 4px);
+    border-radius: 2px 0 0 2px;
+}
+
+/* Corpo amarelo sextavado com brilho no topo */
 .lapis-corpo {
-    width: 110px;
+    flex: 1;
     height: 100%;
-    background: linear-gradient(to bottom, #3b533e 0%, #283a2a 50%, #162217 100%);
-    border-radius: 1px 0 0 1px;
+    background: linear-gradient(to bottom, 
+        #b98200 0%, 
+        #b6952a 35%, 
+        #a77200 70%, 
+        #805300 100%
+    );
 }
 
-/* A parte de madeira apontada */
+/* Madeira apontada com textura de textura/veios */
 .lapis-ponta {
-    width: 24px;
+    width: 26px;
     height: 100%;
-    background: #e3c193;
-    clip-path: polygon(0 0, 100% 50%, 0 100%); /* Faz o formato triangular da ponta */
+    background: linear-gradient(to bottom, #977757, #8b6842);
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    position: relative;
 }
 
-/* A pontinha de grafite bem na extremidade */
+/* Grafite escuro na extremidade */
 .lapis-grafite {
     position: absolute;
-    right: 6px;
-    top: 3px;
-    width: 7px;
-    height: 6px;
-    background: #2b2b2b;
-    clip-path: polygon(0 30%, 100% 50%, 0 70%);
+    right: 0;
+    top: 0;
+    width: 10px;
+    height: 100%;
+    background: #222222;
+    clip-path: polygon(0 35%, 100% 50%, 0 65%);
 }
 
-/* --- CONSTRUÇÃO DA BORRACHA REALISTA (Bicolor com Capinha) --- */
+
+/* =========================================================
+   2. BORRACHA REALISTA (Bicolor + Listra Branca + Chanfro)
+   ========================================================= */
 .objeto-borracha {
-    width: 45px;
-    height: 26px;
-    background: linear-gradient(to right, #b83b30 50%, #2e5697 50%); /* Vermelha e Azul */
-    border-radius: 3px;
+    width: 55px;
+    height: 22px;
+    border-radius: 6px;
     position: relative;
     display: flex;
     align-items: center;
     box-sizing: border-box;
+    filter: drop-shadow(2px 3px 3px rgba(0,0,0,0.35));
+    
+    /* Formato Chanfrado: Canto esquerdo azul inclinado, canto direito reto */
+    clip-path: polygon(12% 0%, 100% 0%, 100% 100%, 0% 100%);
+    
+    /* Fundo Vermelho e Azul + A Listra Branca passando no meio */
+    background: 
+        /* Divisão Vermelho (Esquerda) e Azul (Direita) com sombra de dobra */
+        linear-gradient(to right, 
+            #184172 0 42%, 
+            #153a64 42% 45%, 
+            #9c261b 45% 100%
+        );
 }
 
-/* Aquela capinha de papel protetora branca/azulada que envelopa a borracha */
+/* Removemos o estilo antigo da capinha de papel para focar no modelo da imagem */
 .borracha-capa {
-    position: absolute;
-    left: 8px;
-    width: 20px;
-    height: 100%;
-    top: -2%;
-    background: linear-gradient(to bottom, #f2f2f2 0%, #dbdbdb 100%);
-    border: 1px solid #b5b5b5;
-    border-radius: 2px;
-    box-shadow: inset -2px 0 3px rgba(0,0,0,0.1);
+    display: none;
 }
+
 /* Garante que o container da folha ocupe todo o espaço e alinhe o texto no centro */
 .folha-frente .folha-rosto {
     display: flex !important;
@@ -1530,5 +1559,5 @@ label {
 html:active,
 body:active,
 *:active {
-    cursor: url('../imagens/cursores/mao-fechada.png') 10 2, grabbing !important;
+    cursor: url('../imagens/cursores/mao-fechada.png') 10 -50, grabbing !important;
 }
