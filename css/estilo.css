@@ -1502,3 +1502,33 @@ transparent 14%
     margin: 0;
     line-height: 1.5;
 }
+/* =========================================================
+   CURSOR PERSONALIZADO (Mão de Investigador - Apontando / Fechada)
+   ========================================================= */
+
+/* 1. ESTADO PADRÃO: Mão Apontando em TUDO (Previne falhas ao passar por textos, páginas, capas e botões) */
+html, 
+body, 
+*, 
+*:hover {
+    cursor: url('../imagens/cursores/mao-apontando.png') 10 2, auto !important;
+}
+
+/* Garante que inputs e textareas do bloco de notas continuem usando a mão e não o 'I-beam' de texto do Windows */
+input, 
+textarea, 
+p, 
+span, 
+h1, 
+h2, 
+h3, 
+label {
+    cursor: url('../imagens/cursores/mao-apontando.png') 10 2, auto !important;
+}
+
+/* 2. ESTADO AGARRANDO: Mão Fechada (Ao clicar e segurar qualquer coisa na tela) */
+html:active,
+body:active,
+*:active {
+    cursor: url('../imagens/cursores/mao-fechada.png') 10 -50, grabbing !important;
+}
